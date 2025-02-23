@@ -1,5 +1,6 @@
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin: 0;
   min-height: 100vh;
 }
@@ -24,6 +25,88 @@ body {
 
 .card {
   border: 1px solid #eee;
-  box-shadow: 2px 4px 16px rgba(0,0,0,.06);
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.06);
   border-radius: 4px;
+}
+
+/* END OF STARTER FILE */
+
+/* 
+    The footer is pushed to the bottom of the screen (the footer may go below the bottom of the screen if the content of the 'cards' section overflows and/or if your screen is shorter).
+    The footer text is centered horizontally and vertically.
+    The sidebar and cards take up all available space above the footer.
+
+    
+    There is 48px padding around the 'cards' section.
+    The cards are arranged horizontally, but wrap to multiple lines when they run out of room on the page.
+ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+}
+
+/* .container {
+  display: flex;
+  flex-direction: column;
+} */
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  font-size: 32px;
+  font-weight: 900;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  /* text-align: center; */
+}
+
+.content-section {
+  display: flex;
+  /* overflow: hidden; */
+  flex: 1;
+}
+
+.sidebar {
+  width: 300px;
+  /* height: 100%; */
+  flex-shrink: 0;
+  font-size: 24px;
+  color: #fff;
+  padding: 16px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  padding: 48px;
+  width: 300px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
