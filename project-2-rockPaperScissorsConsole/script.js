@@ -48,6 +48,31 @@ function playGame(choice) {
   }
 }
 
+function finalWinner(humanScore, computerScore) {
+  const container = document.querySelector(".container");
+  const div = document.createElement("div");
+
+  div.setAttribute("class", "final-winner");
+
+  container.appendChild(div);
+
+  const p = document.createElement("p");
+  const contentOfFinalWinner = document.querySelector(".final-winner");
+
+  contentOfFinalWinner.appendChild(p);
+
+  let win = "";
+
+  if (humanScore > computerScore) {
+    win = "Human";
+  } else if (humanScore < computerScore) {
+    win = "Computer";
+  } else {
+    win = "No Winner";
+  }
+  document.querySelector(".final-winner > p").textContent = `Winner is: ${win}`;
+}
+
 // --- CLI INTERACTION ---
 
 const numberOfRounds = document.querySelector("input");
@@ -64,6 +89,21 @@ let humanScore = 0;
 let computerScore = 0;
 let round = 0;
 let gameStart = false;
+
+btnRstart.addEventListener("click", () => {
+  humanScore = 0;
+  computerScore = 0;
+  round = 0;
+  gameStart = false;
+  btnOk.disabled = false;
+
+  numberOfRoundsText.textContent = "__";
+  textHumanScore.textContent = "__";
+  textComputerScore.textContent = "__";
+  humanChoiceSelect.textContent = "__";
+  computerChoiceSelect.textContent = "__";
+  winner.textContent = "__";
+});
 
 btnOk.addEventListener("click", () => {
   round = Number(numberOfRounds.value);
@@ -91,6 +131,10 @@ btnRock.addEventListener("click", () => {
     round--;
     numberOfRoundsText.textContent = round;
   }
+
+  if (round === 0 && gameStart === true) {
+    finalWinner(humanScore, computerScore);
+  }
 });
 
 btnPaper.addEventListener("click", () => {
@@ -106,6 +150,10 @@ btnPaper.addEventListener("click", () => {
     round--;
     numberOfRoundsText.textContent = round;
   }
+
+  if (round === 0 && gameStart === true) {
+    finalWinner(humanScore, computerScore);
+  }
 });
 
 btnScissors.addEventListener("click", () => {
@@ -120,5 +168,9 @@ btnScissors.addEventListener("click", () => {
     playGame(choice);
     round--;
     numberOfRoundsText.textContent = round;
+  }
+
+  if (round === 0 && gameStart === true) {
+    finalWinner(humanScore, computerScore);
   }
 });
