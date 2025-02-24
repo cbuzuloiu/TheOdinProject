@@ -3,8 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <div class="title"><h1>Play Rock Paper Scissors</h1></div>
+
+      <div class="inputFormUser">
+        <label for="item">How many rounds do you wnat to play:</label>
+        <input type="number" name="item" id="item" />
+        <button class="number-of-rounds disabled">OK</button>
+        <span
+          >Number of Rounds Left: <span class="nr-of-rounds">___</span></span
+        >
+        <button class="restart">RESTART</button>
+      </div>
+
+      <div class="score">
+        <p>
+          HUMAN SCORE: <span class="human-score"><strong>0</strong></span> V.S.
+          COMPUTER SCORE:
+          <span class="computer-score"><strong>0</strong></span>
+        </p>
+      </div>
+
+      <div class="btn-human-choice">
+        <button class="rock">Rock</button>
+        <button class="paper">Paper</button>
+        <button class="scissors">Scissors</button>
+      </div>
+
+      <div class="choice">
+        <p>
+          HUMAN CHOICE WAS:
+          <span class="human-choice"><strong>___</strong></span> V.S. COMPUTER
+          CHOICE WAS:
+          <span class="computer-choice"><strong>___</strong></span>
+        </p>
+        <p>THE WINNER IS: <span class="winner">___</span></p>
+      </div>
+    </div>
+  </body>
 </html>

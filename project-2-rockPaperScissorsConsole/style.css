@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  border: 1px solid black;
+}
+
+.title {
+  text-align: center;
+}
+
+.inputFormUser {
+  margin: 20px 0px;
+  padding-left: 20px;
+}
+
+.score {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-human-choice {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.choice {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.human-choice {
+  font-weight: 900;
+  color: blue;
+}
+
+.computer-choice {
+  font-weight: 900;
+  color: blue;
+}
+
+.winner {
+  font-weight: 900;
+  color: green;
+  font-size: 20px;
+}
+
+.inputFormUser {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
