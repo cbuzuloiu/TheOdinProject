@@ -11,10 +11,6 @@ function playRound(choice) {
   const humanChoice = choice;
   const computerChoice = getComputerChoice();
 
-  const humanChoiceSelect = document.querySelector(".human-choice");
-  const computerChoiceSelect = document.querySelector(".computer-choice");
-  const winner = document.querySelector(".winner");
-
   humanChoiceSelect.textContent = humanChoice.toUpperCase();
   computerChoiceSelect.textContent = computerChoice.toUpperCase();
 
@@ -74,7 +70,9 @@ function finalWinner(humanScore, computerScore) {
 }
 
 // --- CLI INTERACTION ---
-
+const humanChoiceSelect = document.querySelector(".human-choice");
+const computerChoiceSelect = document.querySelector(".computer-choice");
+const winner = document.querySelector(".winner");
 const numberOfRounds = document.querySelector("input");
 const numberOfRoundsText = document.querySelector(".nr-of-rounds");
 const btnRock = document.querySelector(".rock");
@@ -103,6 +101,8 @@ btnRstart.addEventListener("click", () => {
   humanChoiceSelect.textContent = "__";
   computerChoiceSelect.textContent = "__";
   winner.textContent = "__";
+
+  document.querySelector(".final-winner").remove();
 });
 
 btnOk.addEventListener("click", () => {
