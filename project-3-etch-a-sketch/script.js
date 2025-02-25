@@ -26,7 +26,9 @@ function createPixelCard(n) {
     element.style.border = "1px solid black";
 
     element.addEventListener("mouseover", () => {
-      element.style.backgroundColor = `black`;
+      element.style.backgroundColor = `#${Math.floor(
+        Math.random() * 16777215
+      ).toString(16)}`;
     });
   });
 }
