@@ -42,14 +42,14 @@ btn.addEventListener("click", () => {
   const n = Number(inputField.value);
   inputField.value = "";
 
-  if (n <= 0) {
+  if (n <= 0 || n > 100) {
     alert("Grid dimension must be beween 1 and 100");
+  } else {
+    const divSelect = document.querySelectorAll(".drawing-bord > div");
+    divSelect.forEach((element) => {
+      element.remove();
+    });
+
+    createPixelCard(n);
   }
-
-  const divSelect = document.querySelectorAll(".drawing-bord > div");
-  divSelect.forEach((element) => {
-    element.remove();
-  });
-
-  createPixelCard(n);
 });
