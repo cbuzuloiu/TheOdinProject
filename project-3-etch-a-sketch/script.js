@@ -24,6 +24,10 @@ function createPixelCard(n) {
     element.style.width = `${cadrPixelWidth}px`;
     element.style.height = `${cadrPixelHeight}px`;
     element.style.border = "1px solid black";
+
+    element.addEventListener("mouseover", () => {
+      element.style.backgroundColor = `black`;
+    });
   });
 }
 
