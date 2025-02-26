@@ -46,8 +46,6 @@ const secondScreen = document.querySelector(".container-1");
 const btnPoint = document.querySelector(".point");
 const btnC = document.querySelector(".cancel");
 const btnDelete = document.querySelector(".delete");
-console.log(btnC);
-console.log(btnDelete);
 
 btnC.addEventListener("click", () => {
   operand = "";
@@ -64,12 +62,20 @@ btnC.addEventListener("click", () => {
   btnPoint.disabled = false;
 });
 
-btnDelete.addEventListener("click", () => {});
+btnDelete.addEventListener("click", () => {
+  // console.log(operand);
+  // console.log(secondScreen);
+  operand = operand.slice(0, -1);
+  // console.log(operand);
+  mainScreen.textContent = operand;
+  secondScreenContent = operand;
+  // console.log(operations);
+});
 
 btnDigit.forEach((element) => {
   element.addEventListener("click", () => {
     const content = element.textContent;
-    console.log(content);
+
     operand += content;
     mainScreen.textContent = operand;
     secondScreenContent += content;
@@ -83,7 +89,6 @@ btnPoint.addEventListener("click", () => {
     content = "0.";
   }
 
-  console.log(content);
   operand += content;
   mainScreen.textContent = operand;
   secondScreenContent += content;
@@ -105,7 +110,6 @@ btnOperations.forEach((element) => {
     btnOperations.forEach((e) => {
       e.disabled = true;
     });
-    // btnOperations.map((element.disabled = true));
   });
 });
 
@@ -160,7 +164,3 @@ btnEqual.addEventListener("click", () => {
 
   btnPoint.disabled = false;
 });
-
-// btn.addEventListener("click", () => {
-//   alert("click");
-// });
