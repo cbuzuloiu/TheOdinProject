@@ -34,10 +34,6 @@ function operate(operand1, operator, operand2) {
   }
 }
 
-let operand1;
-let operator;
-let operand2;
-
 let operand = "";
 let secondScreenContent = "";
 let operations = [];
@@ -48,6 +44,18 @@ const btnEqual = document.querySelector(".equal");
 const mainScreen = document.querySelector(".container-2");
 const secondScreen = document.querySelector(".container-1");
 const btnPoint = document.querySelector(".point");
+const btnC = document.querySelector(".cancel");
+const btnDelete = document.querySelector(".delete");
+console.log(btnC);
+console.log(btnDelete);
+
+btnC.addEventListener("click", () => {
+  alert("Hello");
+});
+
+btnDelete.addEventListener("click", () => {
+  alert("delete");
+});
 
 btnDigit.forEach((element) => {
   element.addEventListener("click", () => {

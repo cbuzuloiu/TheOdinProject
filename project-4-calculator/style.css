@@ -16,6 +16,10 @@ button {
   font-size: 20px;
 }
 
+.container-7 > button {
+  width: 104px;
+}
+
 .container-1 {
   text-align: right;
   height: 41px;
