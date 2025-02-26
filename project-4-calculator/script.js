@@ -47,14 +47,31 @@ const btnOperations = document.querySelectorAll(".operations");
 const btnEqual = document.querySelector(".equal");
 const mainScreen = document.querySelector(".container-2");
 const secondScreen = document.querySelector(".container-1");
+const btnPoint = document.querySelector(".point");
 
 btnDigit.forEach((element) => {
   element.addEventListener("click", () => {
     const content = element.textContent;
+    console.log(content);
     operand += content;
     mainScreen.textContent = operand;
     secondScreenContent += content;
   });
+});
+
+btnPoint.addEventListener("click", () => {
+  let content = ".";
+
+  if (operand === "") {
+    content = "0.";
+  }
+
+  console.log(content);
+  operand += content;
+  mainScreen.textContent = operand;
+  secondScreenContent += content;
+
+  btnPoint.disabled = true;
 });
 
 btnOperations.forEach((element) => {
@@ -123,6 +140,8 @@ btnEqual.addEventListener("click", () => {
   btnOperations.forEach((e) => {
     e.disabled = false;
   });
+
+  btnPoint.disabled = false;
 });
 
 // btn.addEventListener("click", () => {
