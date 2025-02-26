@@ -48,8 +48,6 @@ const btnEqual = document.querySelector(".equal");
 const mainScreen = document.querySelector(".container-2");
 const secondScreen = document.querySelector(".container-1");
 
-// mainScreen.textContent = operand;
-
 btnDigit.forEach((element) => {
   element.addEventListener("click", () => {
     const content = element.textContent;
@@ -62,20 +60,25 @@ btnDigit.forEach((element) => {
 btnOperations.forEach((element) => {
   element.addEventListener("click", () => {
     operations.push(Number(operand));
-    console.log(operations);
+    // console.log(operations);
     const content = element.textContent;
     operations.push(content);
-    console.log(operations);
+    // console.log(operations);
     secondScreenContent += ` ${content} `;
     secondScreen.textContent = secondScreenContent;
     operand = " ";
+
+    btnOperations.forEach((e) => {
+      e.disabled = true;
+    });
+    // btnOperations.map((element.disabled = true));
   });
 });
 
 btnEqual.addEventListener("click", () => {
   operations.push(Number(operand));
   secondScreen.textContent = secondScreenContent;
-  console.log(operations);
+  // console.log(operations);
 
   if (operations[1] === "+") {
     let result = add(operations[0], operations[2]);
@@ -84,7 +87,7 @@ btnEqual.addEventListener("click", () => {
     operand = result;
     secondScreen.textContent = result;
     secondScreenContent = result;
-    console.log(operations);
+    // console.log(operations);
   }
 
   if (operations[1] === "-") {
@@ -94,7 +97,7 @@ btnEqual.addEventListener("click", () => {
     operand = result;
     secondScreen.textContent = result;
     secondScreenContent = result;
-    console.log(operations);
+    // console.log(operations);
   }
 
   if (operations[1] === "X") {
@@ -104,7 +107,7 @@ btnEqual.addEventListener("click", () => {
     operand = result;
     secondScreen.textContent = result;
     secondScreenContent = result;
-    console.log(operations);
+    // console.log(operations);
   }
 
   if (operations[1] === "/") {
@@ -114,8 +117,12 @@ btnEqual.addEventListener("click", () => {
     operand = result;
     secondScreen.textContent = result;
     secondScreenContent = result;
-    console.log(operations);
+    // console.log(operations);
   }
+
+  btnOperations.forEach((e) => {
+    e.disabled = false;
+  });
 });
 
 // btn.addEventListener("click", () => {
