@@ -50,12 +50,21 @@ console.log(btnC);
 console.log(btnDelete);
 
 btnC.addEventListener("click", () => {
-  alert("Hello");
+  operand = "";
+  secondScreenContent = "";
+  operations = [];
+
+  mainScreen.textContent = "0";
+  secondScreen.textContent = "";
+
+  btnOperations.forEach((e) => {
+    e.disabled = false;
+  });
+
+  btnPoint.disabled = false;
 });
 
-btnDelete.addEventListener("click", () => {
-  alert("delete");
-});
+btnDelete.addEventListener("click", () => {});
 
 btnDigit.forEach((element) => {
   element.addEventListener("click", () => {
